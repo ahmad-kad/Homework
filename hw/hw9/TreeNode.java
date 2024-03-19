@@ -1,4 +1,4 @@
-package hw9;
+package hw.hw9;
 public class TreeNode {
     public int val;
     public TreeNode left;

@@ -1,6 +1,6 @@
-package hw9;
+package hw.hw9;
 public class hw9 {
-    
+
     // Traversal
     public TreeNode findNode(TreeNode root, int pVal) {
         TreeNode current = root;
