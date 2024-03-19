@@ -1,5 +1,6 @@
 package hw9;
 public class hw9 {
+    
     // Traversal
     public TreeNode findNode(TreeNode root, int pVal) {
         TreeNode current = root;
@@ -36,9 +37,11 @@ public class hw9 {
     }
 
     public static void main(String[] args) {
+        // System Args
         int pVal = Integer.parseInt(args[0]);
         int qVal = Integer.parseInt(args[1]);
-        // BSST
+
+        // BST
         TreeNode root = new TreeNode(4);
         root.left = new TreeNode(3);
         root.right = new TreeNode(8);
@@ -50,7 +53,7 @@ public class hw9 {
         TreeNode p = tree.findNode(root, pVal);
         TreeNode q = tree.findNode(root, qVal);
 
-        TreeNode ancestor = tree.lowestCommonAncestor(root, p , q);
+        TreeNode ancestor = tree.lowestCommonAncestor(root, p, q);
         if (ancestor != null) {
             System.out.println("Lowest Common Ancestor: " + ancestor.val);
         } else {
