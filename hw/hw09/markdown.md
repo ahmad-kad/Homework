@@ -4,7 +4,7 @@ Write a small markdown file explaining the high-level approach(es) you used to s
 Steps taken:
 - Create BST
 - Add a function to find the specific node
-- Compare sides of nodes (p,q)
+- Find orientation of nodes (p,q) (left, right, split)
 - Search that side until both nodes are on separate sides or if one is a root node
 
 ### Recursive
