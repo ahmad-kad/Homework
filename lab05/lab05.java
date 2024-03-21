@@ -1,55 +1,39 @@
 package lab05;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class lab05 {
     public static void printTree(TreeNode node, int level) {
         if (node != null) {
-            System.out.println("  ".repeat(level) + node.val);
+            for (int i = 0; i < level; i++) {
+                System.out.print("  ");
+            }
+            System.out.println(node.val);
             printTree(node.left, level + 1);
             printTree(node.right, level + 1);
         }
     }
-
-    public static void inorderTraversal(TreeNode node, List<Integer> inorder) {
-        if (node != null) {
-            inorderTraversal(node.left, inorder);
-            inorder.add(node.val);
-            inorderTraversal(node.right, inorder);
-        }
-    }
-
-    public static boolean isBST(TreeNode root) {
-        return isBSTUtil(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
-    }
-
-    public static boolean isBSTUtil(TreeNode node, int min, int max) {
-        if (node == null)
+    
+    public static boolean isValidBST(TreeNode root) {
+        if (root == null) {
             return true;
-
-        if (node.val <= min || node.val >= max)
+        }
+        if ((root.left != null && root.left.val >= root.val) || 
+            (root.right != null && root.right.val <= root.val)) {
             return false;
-
-        return isBSTUtil(node.left, min, node.val) && isBSTUtil(node.right, node.val, max);
+        }
+        return isValidBST(root.left) && isValidBST(root.right);
     }
-
+    
     public static void main(String[] args) {
         TreeNode root = new TreeNode(6);
         root.left = new TreeNode(4);
         root.right = new TreeNode(8);
 
         root.left.left = new TreeNode(3);
-        root.left.right = new TreeNode(5);
-        root.right.left = new TreeNode(19);
+        root.left.right = new TreeNode(1);
+        root.right.left = new TreeNode(7);
         root.right.right = new TreeNode(9);
 
         printTree(root, 0);
-
-        List<Integer> inorder = new ArrayList<>();
-        inorderTraversal(root, inorder);
-        System.out.println("Inorder traversal: " + inorder);
-
-        System.out.println("Is BST: " + isBST(root));
+        System.out.println(isValidBST(root));
     }
 }

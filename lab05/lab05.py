@@ -12,7 +12,6 @@ class TreeNode(object):
         self.right = right
 
 
-
 # In[2]:
 
 
@@ -26,16 +25,6 @@ def print_tree(node, level=0):
 # In[3]:
 
 
-def inorder_traversal(node, inorder):
-    if node:
-        inorder_traversal(node.left, inorder)
-        inorder.append(node.val)
-        inorder_traversal(node.right, inorder)
-
-
-# In[4]:
-
-
 def isBST(root):
     if root is None:
         return True
@@ -44,7 +33,7 @@ def isBST(root):
     return isBST(root.left) and isBST(root.right)
 
 
-# In[5]:
+# In[4]:
 
 
 root = TreeNode(6)
@@ -52,8 +41,8 @@ root.left = TreeNode(4)
 root.right = TreeNode(8)
 
 root.left.left = TreeNode(3)
-root.left.right = TreeNode(5)
-root.right.left = TreeNode(19)
+root.left.right = TreeNode(1)
+root.right.left = TreeNode(7)
 root.right.right = TreeNode(9)
 
 print_tree(root)
@@ -62,10 +51,10 @@ print_tree(root)
 # In[6]:
 
 
-print(isBST(root)) 
+print(isBST(root))
 
 
-# In[7]:
+# In[2]:
 
 
 get_ipython().system('jupyter nbconvert --to script lab05.ipynb')
