@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[10]:
+# In[1]:
 
 
 ## Init
 
 
-# In[11]:
+# In[2]:
 
 
 class TreeNode(object):
@@ -17,7 +17,7 @@ class TreeNode(object):
          self.right = right
 
 
-# In[12]:
+# In[3]:
 
 
 def print_queue(queue):
@@ -25,7 +25,7 @@ def print_queue(queue):
         print(node.val)
 
 
-# In[13]:
+# In[4]:
 
 
 from typing import List, Optional
@@ -65,7 +65,7 @@ def levelOrder(root: Optional[TreeNode]) -> List[List[int]]:
 
 
 
-# In[14]:
+# In[5]:
 
 
 def levelOrder2(root: Optional[TreeNode]) -> List[List[int]]:
@@ -90,7 +90,7 @@ def levelOrder2(root: Optional[TreeNode]) -> List[List[int]]:
     return result
 
 
-# In[15]:
+# In[6]:
 
 
 # BST
@@ -104,7 +104,7 @@ root.right.right = TreeNode(9)
 root2 = TreeNode()
 
 
-# In[16]:
+# In[7]:
 
 
 # Function to print the level order traversal
@@ -121,7 +121,7 @@ def print_level_order(tree):
 
 
 
-# In[17]:
+# In[8]:
 
 
 tree1 = TreeNode(3)
@@ -186,7 +186,7 @@ print("Test Case 7 (Complete binary tree with depth 3):")
 print_level_order(tree6)
 
 
-# In[19]:
+# In[9]:
 
 
 get_ipython().system('jupyter nbconvert --to script hw10.ipynb')
