@@ -1,5 +1,3 @@
-package extracredit.Fibonacci;
-
 public class fib {
     public static int fibonacci(int n){
         if(n == 1 || n == 0){
