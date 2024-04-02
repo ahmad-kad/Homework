@@ -24,9 +24,7 @@
 
 
 #### Worst Case: O(n^2)
-
-        Two for-loops
-        
+        O(n) * O(n) = O(n^2)
 ##### Equation
 
         n(1+1+n(1+1)+1)
@@ -34,3 +32,9 @@
         2n^2 + 3n
     
         2n^2 is the highest polynomial therefore worst case is o(n^2) disregard the scalar value (2)
+
+
+#### Best Case: Omega(n)
+        if the array is already sorted meaning the algorithm traversal through the array **once** 
+#### Average Case:  Theta(n^2)
+        Average case must lie between Theta(n) and Theta(n^2). Therefore must average case must be Theta(n^2) because we will take the highest degree in (the equaltion n^2 + n )/ 2 referring to the average case.

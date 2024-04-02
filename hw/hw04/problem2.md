@@ -24,3 +24,11 @@ Below is the pseudocode to perform matrix multiplication, given two matrices A a
     4 + n^3 + n^2
 
     n^3 contains the highest degree therefore the worst case is O(n^3)
+
+### Best Case: Omega(1) * if it exits early else Omega(n^3)
+
+    best case is invalid matrix operation where the function exits before performing any calculation at *Omega(1)* however useful best case scenarios are limited to Omega(n^3) because matrix operations must iterate through all their elements to calculate the results. * atleast for this algorithm.
+
+### Average Case: Theta(n^3)
+
+    Average case will be Theta(n^3) because the best and worst case are Omega(n^3) (provided they give the actual result)
