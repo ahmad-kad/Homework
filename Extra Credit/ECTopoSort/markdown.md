@@ -57,24 +57,54 @@ else:
 ```
 ### DFS
 
+#### initializiation
 ```python
-def topoSortDFS(graph):
     visited = set()
     stack = []
- ```
- ```python   
-    def dfs(node):
-        visited.add(node)
-        for neighbor in graph[node]:
-            if neighbor not in visited:
-                dfs(neighbor)
-        stack.append(node)
 ```
+Visited: Ensures that the algorithm doesn't revist any nodes during DFS Traversal
+Ancestors: Catches cycles. It also prevents false positives in cases where DFS needs to traverse through a junction.
+Stack: Stack is required to perform DFS operation.
 
-```python    
+
+```python
+    def dfs(node, ancestors):
+        visited.add(node)
+        ancestors.add(node)
+
+        for neighbor in graph[node]:
+            if neighbor in ancestors:
+                return False
+            
+            if neighbor not in visited:
+                if not dfs(neighbor, ancestors):
+                    return False
+        
+        ancestors.remove(node)
+        stack.append(node)
+        return True
+```
+    DFS takes in a node currently being visited and a set containing all previous nodes called ancestors
+    It adds to the visted and ancestor set and itereates through the graph
+        The ancestor set is to check previously visited within the recusion stack to exit quickly
+        If neighhbor isn't in visited then start traversing in that direction
+    After exploring all neighbors, it removes the current node from the ancestors set and appends it to the stack.
+   
+
+
+```python
     for node in graph:
         if node not in visited:
-            dfs(node)
-    
-    return stack[::-1]
+            if not dfs(node, set()):
+                return False
 ```
+
+    This loop iterates over each node in the graph and for unvisited node, it calls the dfs function with an new empty set as the ancestors for the new branch.
+    If dfs returns False it indicates a cycle and Topological Sort fails
+
+``` python
+    return stack[::-1] if stack else False
+
+```
+
+    If there is no false condition, the stack will be organized in reverse order. stack[::-1] will return the sorted array. 
