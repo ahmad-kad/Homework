@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[229]:
+# In[1]:
 
+
+# Prim's algorithm
 
 from typing import List
 import heapq
@@ -45,7 +47,7 @@ def convertToGraph(n, pipes):
     return graph
 
 
-# In[230]:
+# In[2]:
 
 
 n = 2
@@ -55,7 +57,7 @@ pipes = [[1,2,1],[1,2,2]]
 minCostToSupplyWater(n,wells,pipes)
 
 
-# In[231]:
+# In[3]:
 
 
 def quicksort(pipes):
@@ -68,10 +70,11 @@ def quicksort(pipes):
     return quicksort(left) + middle + quicksort(right)
 
 
-# In[232]:
+# In[4]:
 
 
-def minCostToSupplyWater(n: int, wells: List[int], pipes: List[List[int]]) -> int:
+# Kruskal's algoirthm using quicksort
+def minCostToSupplyWater2(n: int, wells: List[int], pipes: List[List[int]]) -> int:
     visited = set()
     sortedList = quicksort(pipes)
     mst = []
@@ -92,7 +95,7 @@ def minCostToSupplyWater(n: int, wells: List[int], pipes: List[List[int]]) -> in
     return total
 
 
-# In[233]:
+# In[5]:
 
 
 n = 3
@@ -102,19 +105,21 @@ pipes = [[1,2,1],[1,2,2],[2,3,1],[3,1,5]]
 minCostToSupplyWater(n,wells,pipes)
 
 
-# In[234]:
+# In[6]:
 
 
+# Test Case
 n = 2
 wells = [1,1]
 pipes = [[1,2,1],[1,2,2]]
 
-minCostToSupplyWater(n,wells,pipes)
+minCostToSupplyWater2(n,wells,pipes)
 
 
-# In[235]:
+# In[7]:
 
 
+# Single Case
 n = 1
 wells = [1]
 pipes = []
@@ -122,7 +127,7 @@ pipes = []
 minCostToSupplyWater(n,wells,pipes)
 
 
-# In[236]:
+# In[8]:
 
 
 n = 4
@@ -132,9 +137,10 @@ pipes = [[1, 2, 1], [2, 3, 2], [3, 4, 3]]
 minCostToSupplyWater(n,wells,pipes)
 
 
-# In[237]:
+# In[9]:
 
 
+# Uneven well cost
 n = 4
 wells = [1, 2, 3, 4]
 pipes = [[1, 2, 1], [1, 3, 1], [2, 4, 1], [3, 4, 1]]
@@ -142,7 +148,7 @@ pipes = [[1, 2, 1], [1, 3, 1], [2, 4, 1], [3, 4, 1]]
 minCostToSupplyWater(n,wells,pipes)
 
 
-# In[239]:
+# In[10]:
 
 
 get_ipython().system('jupyter nbconvert --to script hw12.ipynb')
