@@ -15,7 +15,8 @@ We can do this in two greedy ways. Prim's Algorithm and Kruskal's Algorithm.
 
 Prim's algorithm does the following:
 - traverses through each node marking which node its visited
-- then it gets all the node's neighbors and checks if its been visited
+- then it gets all the node's neighbors and checks whether the cost of the well is cheaper than connecting a pipe and setting to the minimum of both
+- then it checks if the nodes have been visited and skips if both nodes are present within the set
 - it looks at what the minimum weighted edge and adds it to the queue/MST
 - This continues until all nodes are visited.
 
